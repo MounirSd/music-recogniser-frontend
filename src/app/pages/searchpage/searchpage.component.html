@@ -1,0 +1,22 @@
+<div class="container center">
+    <div>
+        <img class="logo" src="../../../assets/images/logo.png" alt="">
+    </div>
+    <div class="search-input">
+        <label for="ytUrl">Youtube Link</label>
+        <input (input)="checkSearchInput()" type="text" placeholder="ex: https://www.youtube.com/watch?v=Ct6BUPvE2sM"
+            [(ngModel)]="ytUrl" [disabled]="loading">
+    </div>
+    <button (click)="submitVideo()" type="button" class="search-btn" [disabled]="!enableSearchBtn">Search
+        Artist</button>
+</div>
+<hr>
+<div class="container">
+    <div class="playlist-status" *ngIf="results.length == 0">
+        <p class="status-message">{{statusMessage}}</p>
+        <app-loading-spinner class="loading-spinner" *ngIf="loading"></app-loading-spinner>
+    </div>
+
+    <app-playlist *ngIf="results.length !== 0" [videos]="results"></app-playlist>
+
+</div>

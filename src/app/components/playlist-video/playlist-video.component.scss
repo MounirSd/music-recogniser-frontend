@@ -1,0 +1,52 @@
+@import "../../common/theme-colors.scss";
+
+.video {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    box-shadow: -5px 8px 19px #000;
+    margin-bottom: 8px;
+    color: $eerie-black;
+    transition: 0.3s;
+    max-height: 260px;
+
+    &:hover {
+        background: $red-crayola;
+        color: #fff;
+    }
+}
+
+.thumbnail {
+    width: 380px;
+    height: 260px;
+}
+.thumbnail img {
+    aspect-ratio: 480/360;
+    max-height: 260px;
+}
+.video-details {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+}
+
+@media (max-width: 682px) {
+    .video {
+        flex-direction: column;
+        max-height: inherit;
+        align-items: stretch;
+        margin-bottom: 1rem;
+    }
+    .thumbnail {
+        width: 100%;
+        height: inherit;
+        aspect-ratio: 480/360;
+        max-height: 487.5px;
+    }
+    .thumbnail img {
+        aspect-ratio: auto;
+        height: auto;
+        width: 100%;
+        max-height: inherit;
+    }
+}

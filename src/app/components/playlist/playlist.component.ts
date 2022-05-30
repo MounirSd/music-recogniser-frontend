@@ -1,0 +1,17 @@
+import { Component, Input, OnInit } from '@angular/core';
+import { YtVideo } from 'src/app/models/ytVideo.model';
+
+@Component({
+  selector: 'app-playlist',
+  templateUrl: './playlist.component.html',
+  styleUrls: ['./playlist.component.scss']
+})
+export class PlaylistComponent implements OnInit {
+  @Input() videos: Array<YtVideo> = []
+  
+  constructor() { }
+
+  ngOnInit(): void {
+  }
+
+}
